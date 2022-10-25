@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2022 Tobias Menzi <flatpak@tobtobxx.net> -->
+<component type="desktop-application">
+	<id>org.featherwallet.Feather</id>
+	<metadata_license>CC0-1.0</metadata_license>
+	<project_license> BSD-3-Clause</project_license>
+	<name>Feather</name>
+	<summary>A free Monero desktop wallet</summary>
+
+	<description>
+		<p>
+			Feather is a free, open-source Monero wallet for Linux, Tails,
+			Windows and macOS.
+		</p>
+		<p>
+			The source code is available at
+			<a href="https://github.com/feather-wallet/feather">
+				github.com/feather-wallet/feather
+			</a>
+
+			<li>
+				<b>easy-to-use</b>, <b>small</b> and <b>fast</b> - Feather
+				runs well on any modern hardware, including virtual machines
+				and live operating systems.
+			</li>
+			<li>
+				<b>beginner friendly</b>, but also caters to advanced Monero
+				users by providing a
+				<a href="https://docs.featherwallet.org/guides/features">
+					feature set
+				</a>
+				that is on par with the official CLI.
+			</li>
+			<li>
+				ships with <b>sane defaults</b> that suit most users, but
+				can also be configured for high or uncommon threat models.
+			</li>
+			<li>
+				serves as a testing grounds for <b>experimental features</b>
+				that may later be adopted in the reference wallets.
+			</li>
+		</p>
+	</description>
+
+	<launchable type="desktop-id">org.featherwallet.Feather</launchable>
+
+	<screenshots>
+		<screenshot type="default">
+			<caption>Home: Fiat price display, CCS proposals and /r/Monero posts</caption>
+			<image>https://featherwallet.org/img/home_monero_light.png</image>
+		</screenshot>
+		<screenshot>
+			<caption>History view: Export as CSV, Rebroadcast failed transactions and Create transaction proofs</caption>
+			<image>https://featherwallet.org/img/history_txinfo_light.png</image>
+		</screenshot>
+		<screenshot>
+			<caption>Nodes screen: Overview of nodes, switch and maintain your own list</caption>
+			<image>https://featherwallet.org/img/feather_node_switch.png</image>
+		</screenshot>
+	</screenshots>
+
+	<url type="homepage">https://featherwallet.org/</url>
+	<url type="faq">https://docs.featherwallet.org/guides/accounts</url>
+	<url type="contact">https://docs.featherwallet.org/guides/report-an-issue</url>
+	<url type="donate">https://docs.featherwallet.org/guides/donate</url>
+
+	<developer_name>featherwallet</developer_name>
+	<update_contact>flatpak_AT_tobtobxx.net</update_contact>
+
+	<releases>
+		<release version="1.2.0" date="2022-10-26">
+			<description>
+				<p>
+					Notes:
+				</p><p>
+					Windows users that installed Feather using the installer should update manually. Download the 2.1.0 installer from featherwallet.org/download and follow the installation procedure like normal.
+				</p><p>
+					MacOS builds are now cross-compiled and reproducible. Work on migrating the build system to Guix + depends was expedited due to a persistent issue with native non-static builds. This is a significant change and may inadvertently cause compatibility issues on some versions of macOS. If you were previously able to run Feather but are not able to run 2.1.0, please report it.
+				</p><p>
+					All release binaries except macOS were built using Docker. We will gradually phase out Docker builds in favor of bootstrappable Guix builds in future releases after additional testing.
+				</p><p>
+					Please note that all Feather versions 1.0.1 and lower will stop working after the August 13 hardfork. Make sure to update your wallet to 2.0.0 or later before contacting support.
+				</p><p>
+					Fixes:
+					<li>Sweeping or sending all spendable balance to an integrated address should no longer throw an error</li>
+					<li>Fixed an issue that could cause the built-in updater to fail to install Feather (Windows installer)</li>
+					<li>Importing a transaction should no longer hang the UI</li>
+				</p><p>
+					Maintenance:
+					<li>Updated Monero to v0.18.1.0</li>
+				</p><p>
+					Known issues:
+					<li>macOS: the webcam QR scanner is not enabled for this release</li>
+				</p>
+			</description>
+		</release>
+	</releases>
+</component>

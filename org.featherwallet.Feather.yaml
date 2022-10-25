@@ -106,6 +106,10 @@ modules:
           - 'sed -i "s/@VERSION@/$(git describe --tags)/" src/config-feather.h'
           - 'sed -i "s/@FEATHER_COMMIT@/$(git rev-parse HEAD)/" src/config-feather.h'
           - 'sed -i "s/@TOR_VERSION@/NOT_EMBEDDED/" src/config-feather.h'
+      # Metadata: Appdata XML
+      - type: file
+        path: org.featherwallet.Feather.appdata.xml
+        dest: /app/share/metainfo/
     buildsystem: simple
     build-commands:
       - 'mkdir -pv build/release'
@@ -129,11 +133,12 @@ modules:
           --install build/release
           --config Release'
       - 'mv -v /app/feather /app/bin/feather'
-      # Metadata
+        # Metadata: .desktop file (needs slight patching)
       - 'install -D src/assets/feather.desktop
           /app/share/applications/org.featherwallet.Feather.desktop'
       - "sed -i 's/Icon=*/Icon=org.featherwallet.Feather/'
           /app/share/applications/org.featherwallet.Feather.desktop"
+        # Metadata: Icons
       - 'install -D src/assets/images/appicons/32x32.png
           /app/share/icons/hicolor/32x32/apps/org.featherwallet.Feather.png'
       - 'install -D src/assets/images/appicons/48x48.png
@@ -146,8 +151,6 @@ modules:
           /app/share/icons/hicolor/128x128/apps/org.featherwallet.Feather.png'
       - 'install -D src/assets/images/appicons/256x256.png
           /app/share/icons/hicolor/256x256/apps/org.featherwallet.Feather.png'
-      # TODO: appdata xml
-
 
 
 finish-args:
