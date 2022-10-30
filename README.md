@@ -17,3 +17,10 @@ TOR proxy. It's planned to package it all when the basics are working smoothly.
 ## Author's blessing
 
 ... is still in progress. See [this issue](https://github.com/feather-wallet/feather/issues/47)
+
+## TODOs
+
+ - Cleaning up /app
+ - Embedding Tor
+ - Updating dependencies
+ - Adding data checkers
