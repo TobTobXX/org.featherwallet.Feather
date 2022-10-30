@@ -62,7 +62,7 @@
 	<url type="homepage">https://featherwallet.org/</url>
 	<url type="faq">https://docs.featherwallet.org/guides/accounts</url>
 	<url type="contact">https://docs.featherwallet.org/guides/report-an-issue</url>
-	<url type="donate">https://docs.featherwallet.org/guides/donate</url>
+	<url type="donation">https://docs.featherwallet.org/guides/donate</url>
 
 	<developer_name>featherwallet</developer_name>
 	<update_contact>flatpak_AT_tobtobxx.net</update_contact>
