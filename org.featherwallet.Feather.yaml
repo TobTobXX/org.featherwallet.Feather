@@ -161,3 +161,5 @@ finish-args:
   - --socket=wayland
   # Network permission
   - --share=network
+  # Access to ~/Monero
+  - --filesystem=~/Monero:create
